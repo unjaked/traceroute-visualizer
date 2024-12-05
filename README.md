@@ -7,13 +7,13 @@
 
 ![Preview](preview.png)
 
-### Runs a `traceroute` on a domain of your choosing and generates an interactive Google Maps that shows the path your data takes to reach the domain!
+### Run a `traceroute` on a domain of your choosing and generate an interactive Google Maps that shows the path your data took to reach the domain!
 
 <div align="left"></a>
 
 ## Dependencies
 
-Traceroute Visualizer requires Python 3.6 or higher and the following libraries:
+Traceroute Visualizer requires [Python](https://www.python.org/) 3.6 or higher and the following libraries:
 - `scapy` For running the traceroute.
 - `requests` For getting the geolocation of an IP from a resolver.
 - `gmplot` For generating the Google Maps plot of the traceroute.
