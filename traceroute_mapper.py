@@ -46,14 +46,15 @@ def main():
         # Get the IP of the url
         url_ip = socket.gethostbyname(user_url)
 
-        # Call get_tracert_ips() to run a traceroute and get a list of IPs
-        print(f"Tracerouting '{user_url}'..."); tracert_ip_list = get_tracert_ips(url_ip)
+        # Run a traceroute and get a list of IPs
+        print(f"Tracerouting '{user_url}'...")
+        tracert_ip_list = get_tracert_ips(url_ip)
 
-        # Call get_geo_data_from_ip() to get a tuple of three lists of each IP and their latitude/longitude. 
+        # Get each traceroute IP and their associated latitude/longitude. 
         tracert_ip_list, latitudes, longitudes = get_geo_data_from_ip(tracert_ip_list)
 
-        # Call plot_traceroute() and create plot/map of the traceroute. Outputs as .html file in same directory.
-        map_name = "traceroute_map.html"
+        # Create plot/map of the traceroute. Outputs as .html file in same directory.
+        map_name = "traceroute_map.html" # Name of the file to save the map to. Must end with .html
         print("Mapping traceroute..."); plot_route(tracert_ip_list, latitudes, longitudes, map_name)
         print(f"Traceroute successfully mapped and saved as '{map_name}' in '{os.getcwd()}'")
 
@@ -62,6 +63,7 @@ def main():
         os.system('pause') # Creates "Press any key to continue . . ." prompt
     except Exception as e:
         print(f"Unexpected error occurred: {e}")
+
 
 
 
